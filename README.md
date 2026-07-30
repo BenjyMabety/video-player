@@ -3,8 +3,6 @@
 ## Project Overview
 A fully functional video player web application built with Angular 16, TypeScript, and vanilla HTML5 video element.
 
-**Location:** `C:\Users\lonwa\source\repos\video-player`
-
 ## Features Implemented
 
 ### 1. Core Functionality
@@ -68,7 +66,6 @@ video-player/
 
 ### Development Server
 ```bash
-cd C:\Users\lonwa\source\repos\video-player
 npm start
 ```
 The app will automatically open at `http://localhost:4200`
