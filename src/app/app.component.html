@@ -1,0 +1,38 @@
+<div class="app-shell">
+  <div class="player-card">
+    <h1>Video Player</h1>
+
+    <div class="video-frame">
+      <video
+        #videoPlayer
+        [src]="videoSrc || ''"
+        (canplay)="onVideoReady()"
+        (ended)="onVideoEnded()"
+        playsinline
+      ></video>
+      <div class="empty-state" *ngIf="!videoSrc">
+        No video loaded. Click Upload to choose a local file.
+      </div>
+    </div>
+
+    <div class="status-row">
+      <p><strong>File:</strong> {{ videoFileName || 'None' }}</p>
+      <p><strong>Volume:</strong> {{ (volume * 100) | number:'1.0-0' }}%</p>
+    </div>
+
+    <div class="controls">
+      <button type="button" (click)="onUploadClick(fileInput)">Upload</button>
+      <button type="button" (click)="play()" [disabled]="!canPlay">Play</button>
+      <button type="button" (click)="pause()" [disabled]="!canPause">Pause</button>
+      <button type="button" (click)="stop()" [disabled]="!canStop">Stop</button>
+      <button type="button" (click)="volumeDown()" [disabled]="!videoSrc">Vol -</button>
+      <button type="button" (click)="volumeUp()" [disabled]="!videoSrc">Vol +</button>
+    </div>
+
+    <input type="file" #fileInput accept="video/*" hidden (change)="onFileSelected($event)" />
+
+    <div class="note">
+      <p>Video is selected from your local drive. When Stop is clicked, the movie is discarded and the player is cleared.</p>
+    </div>
+  </div>
+</div>
