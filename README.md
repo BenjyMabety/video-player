@@ -2,6 +2,7 @@
 
 ## Project Overview
 A fully functional video player web application built with Angular 16, TypeScript, and vanilla HTML5 video element.
+Deployed using Github Pages here: https://benjymabety.github.io/video-player/
 
 ## Features Implemented
 
